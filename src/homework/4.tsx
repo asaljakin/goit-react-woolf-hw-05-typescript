@@ -24,16 +24,17 @@ type MenuAction = {
   onSelectedMenu: (arg: SelectedMenu) => void;
 };
 
-const MenuActionContext = createContext<MenuAction>({
-  onSelectedMenu: noop,
-});
-const MenuSelectedContext = createContext<MenuSelected>({
-  selectedMenu: {},
-});
-
 type PropsProvider = {
   children: ReactNode; // Додати тип для children
 };
+
+const MenuActionContext = createContext<MenuAction>({
+  onSelectedMenu: noop,
+});
+
+const MenuSelectedContext = createContext<MenuSelected>({
+  selectedMenu: {},
+});
 
 function MenuProvider({ children }: PropsProvider) {
   // Додати тип для SelectedMenu він повинен містити { id }
